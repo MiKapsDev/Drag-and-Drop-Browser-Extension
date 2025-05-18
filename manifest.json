@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extensionName__",
+  "version": "1.0.0",
+  "description": "__MSG_extensionDescription__",
+  "default_locale": "en",
+  "icons": {
+    "48": "images/icon48.png"
+  },
+  "permissions": [
+    "clipboardWrite",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.twitch.tv/*",
+    "https://api.7tv.app/*",
+    "https://api.betterttv.net/*",
+    "https://api.frankerfacez.com/*"
+  ],
+  "action": {
+    "default_popup": "popup/extensionSettings.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.twitch.tv/*"],
+      "js": ["scripts/content.js"]
+    }
+  ]
+}

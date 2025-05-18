@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="popupTitle"></title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h1 data-i18n="popupHeading"></h1>
+  <div class="toggle-container">
+    <label data-i18n="extensionEnabledLabel"></label>
+    <label class="toggle">
+      <input type="checkbox" id="enabled">
+      <span class="slider"></span>
+    </label>
+  </div>
+  <div class="toggle-container">
+    <label data-i18n="sevenTVEmotesLabel"></label>
+    <label class="toggle">
+      <input type="checkbox" id="enable7tv">
+      <span class="slider"></span>
+    </label>
+  </div>
+  <div class="toggle-container">
+    <label data-i18n="bttvEmotesLabel"></label>
+    <label class="toggle">
+      <input type="checkbox" id="enableBttv">
+      <span class="slider"></span>
+    </label>
+  </div>
+  <div class="toggle-container">
+    <label data-i18n="ffzEmotesLabel"></label>
+    <label class="toggle">
+      <input type="checkbox" id="enableFfz">
+      <span class="slider"></span>
+    </label>
+  </div>
+  <button id="save" data-i18n="saveButton"></button>
+  <script src="popup.js"></script>
+</body>
+</html>

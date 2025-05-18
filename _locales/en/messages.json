@@ -1,0 +1,38 @@
+{
+  "extensionName": {
+    "message": "Drag and Drop Emotes",
+    "description": "The name of the extension."
+  },
+  "extensionDescription": {
+    "message": "Drag and drop 7TV, BTTV, and FFZ emote images into the Twitch chat to insert their text.",
+    "description": "Description of the extension."
+  },
+  "popupTitle": {
+    "message": "Emote Drag & Drop Settings",
+    "description": "Title of the popup window."
+  },
+  "popupHeading": {
+    "message": "Emote Drag & Drop",
+    "description": "Heading in the popup."
+  },
+  "extensionEnabledLabel": {
+    "message": "Extension Enabled",
+    "description": "Label for the extension enabled toggle."
+  },
+  "sevenTVEmotesLabel": {
+    "message": "7TV Emotes",
+    "description": "Label for the 7TV emotes toggle."
+  },
+  "bttvEmotesLabel": {
+    "message": "BTTV Emotes",
+    "description": "Label for the BTTV emotes toggle."
+  },
+  "ffzEmotesLabel": {
+    "message": "FFZ Emotes",
+    "description": "Label for the FFZ emotes toggle."
+  },
+  "saveButton": {
+    "message": "Save Settings",
+    "description": "Text for the save button."
+  }
+}
