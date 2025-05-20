@@ -161,31 +161,42 @@ function setupTextFieldListeners(textField, settings) {
   };
 
   const dropHandler = async (event) => {
-    if (!settings.enabled) return;
-    event.preventDefault();
-    event.stopPropagation();
+  if (!settings.enabled) {
+    addDragFeedback(textField, false);
+    return;
+  }
+
+  const url = event.dataTransfer.getData('text') || event.dataTransfer.getData('text/plain');
+  const emoteInfo = extractEmoteId(url);
+
+  // Let through if not an emote
+  if (!emoteInfo) {
     dragEnterCount = 0;
     addDragFeedback(textField, false);
+    return;
+  }
 
-    const url = event.dataTransfer.getData('text') || event.dataTransfer.getData('text/plain');
-    const emoteInfo = extractEmoteId(url);
-    if (!emoteInfo) return;
+  event.preventDefault();
+  event.stopPropagation();
 
-    const { type, id } = emoteInfo;
-    let emoteText = null;
+  const { type, id } = emoteInfo;
+  let emoteText = null;
 
-    if (type === '7tv' && settings.enable7tv) {
-      emoteText = await get7TVEmoteText(id);
-    } else if (type === 'bttv' && settings.enableBttv) {
-      emoteText = await getBTTVEmoteText(id);
-    } else if (type === 'ffz' && settings.enableFfz) {
-      emoteText = await getFFZEmoteText(id);
-    }
+  if (type === '7tv' && settings.enable7tv) {
+    emoteText = await get7TVEmoteText(id);
+  } else if (type === 'bttv' && settings.enableBttv) {
+    emoteText = await getBTTVEmoteText(id);
+  } else if (type === 'ffz' && settings.enableFfz) {
+    emoteText = await getFFZEmoteText(id);
+  }
 
-    if (emoteText) {
-      insertTextViaClipboard(textField, emoteText);
-    }
-  };
+  dragEnterCount = 0;
+  addDragFeedback(textField, false);
+
+  if (emoteText) {
+    insertTextViaClipboard(textField, emoteText);
+  }
+};
 
   textField.addEventListener('dragenter', dragEnterHandler, true);
   textField.addEventListener('dragleave', dragLeaveHandler, true);
@@ -199,7 +210,6 @@ function setupTextFieldListeners(textField, settings) {
     drop: dropHandler
   });
 }
-
 // Remove existing event listeners
 function removeDragListeners(textField) {
   const handlers = handlerMap.get(textField);
