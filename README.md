@@ -9,7 +9,7 @@ A Chrome extension that allows users to drag and drop 7TV, BTTV, and FFZ emote i
 - Caches emote texts for faster performance.
 
 ## Installation
-Install from Chrome Webstore: `https://chromewebstore.google.com/detail/hdcdajbbmpmfpkkafcjphceobffmbllm?utm_source=item-share-cb`
+Install from Chrome Webstore: https://chromewebstore.google.com/detail/hdcdajbbmpmfpkkafcjphceobffmbllm?utm_source=item-share-cb
 
 or
 
